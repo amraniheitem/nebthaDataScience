@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { spawn } = require('child_process');
+const cors = require("cors");
 const app = express();
 const port = 3000;
-
+app.use(cors());
 const connectDb = async () => {
     try {
         await mongoose.connect('mongodb+srv://biofyta:biofyta123@biofyta.41qugja.mongodb.net/?retryWrites=true&w=majority&appName=biofyta', {
